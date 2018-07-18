@@ -46,10 +46,10 @@ def L(c2):
 
 
 
-for i in range(100):
+for i in range(10000):
 
-	rgues=np.random.normal(rguard[i],0.1)
-	cgues=np.random.normal(cguard[i],0.1)
+	rgues=np.random.normal(rguard[i],0.3)
+	cgues=np.random.normal(cguard[i],0.3)
 	
 	ying=modelo(t,rguard[i],cguard[i])
 	chig=x2(ying,q)/10000
@@ -80,7 +80,7 @@ for i in range(100):
 			
 			rguard = np.append(rguard, rguard[i])
 			cguard = np.append(cguard, cguard[i])
-			lguard = np.append(lguard, likev)
+			lguard = np.append(lguard, liken)
 
 
 
@@ -90,9 +90,7 @@ mejorr = rguard[mejorl]
 mejormodelo=modelo(t,mejorr,mejorc)
 
 plt.figure()
-plt.subplot(211)
 plt.plot(t,q)
-plt.subplot(212)
 plt.plot(t,mejormodelo)
 plt.show()
 
